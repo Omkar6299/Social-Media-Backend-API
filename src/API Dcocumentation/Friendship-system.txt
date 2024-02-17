@@ -1,0 +1,63 @@
+Friendship Model API Documentation :-
+ --> This API documentation outlines the endpoints and functionality for managing       friendships between users.
+
+Base URL :-
+ --> The base URL for accessing the Friendship Model API is https://example.com/api/friends.
+
+Authentication :-
+ --> The Friendship Model API requires authentication for certain endpoints. Authentication is typically handled via session tokens or JWT tokens passed in the request headers.
+
+Endpoints :-
+
+1. Toggle Friendship :-
+
+Endpoint: GET /toggle-friendship/:friendId
+Description: Toggles the friendship status with the specified user.
+Parameters:
+friendId: The ID of the user to toggle friendship with.
+
+Response:
+200 OK: Successfully toggled friendship status.
+201 Created: Friend request sent successfully.
+400 Bad Request: Unable to toggle friendship status due to invalid parameters.
+404 Not Found: User not found for the specified friendId.
+500 Internal Server Error: Failed to toggle friendship status due to server error.
+
+
+2. Get Pending Requests :-
+
+Endpoint: GET /get-pending-requests
+Description: Retrieves pending friend requests for the authenticated user.
+
+Response:
+200 OK: Successfully retrieved pending friend requests.
+404 Not Found: No pending friend requests found for the authenticated user.
+500 Internal Server Error: Failed to retrieve pending friend requests due to server error.
+
+3. Respond to Request :-
+
+Endpoint: GET /response-to-request/:friendId?action=<action>
+Description: Accepts or rejects a friend request from the specified user.
+Parameters:
+friendId: The ID of the user whose friend request is being responded to.
+action: The action to perform (accept or reject).
+
+Response:
+200 OK: Request accepted or rejected successfully.
+400 Bad Request: Invalid action specified.
+404 Not Found: User not found for the specified friendId.
+500 Internal Server Error: Failed to accept or reject friend request due to server error.
+
+4. Get Friends :-
+
+Endpoint: GET /get-friends/:userId
+Description: Retrieves the list of friends for the specified user.
+Parameters:
+userId: The ID of the user whose friends are being retrieved.
+
+Response:
+200 OK: Successfully retrieved list of friends.
+404 Not Found: User not found for the specified userId.
+500 Internal Server Error: Failed to retrieve friends due to server error.
+Errors
+If an error occurs during API requests, appropriate HTTP status codes and error messages are returned to the client for handling.

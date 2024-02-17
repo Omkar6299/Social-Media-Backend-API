@@ -1,0 +1,48 @@
+Dependencies Documentation:
+
+1. bcrypt (Version: ^5.1.1):
+   - Description: bcrypt is a library used for hashing passwords securely. It provides functions for hashing and comparing passwords using bcrypt hashing algorithm.
+   - Usage: Typically used for encrypting passwords before storing them in a database to enhance security.
+
+2. body-parser (Version: ^1.20.2):
+   - Description: body-parser is a middleware for parsing incoming request bodies in Express.js. It extracts the entire body portion of an incoming request stream and exposes it on req.body.
+   - Usage: Required for parsing request bodies in Express applications, especially for handling POST requests with form data or JSON payloads.
+
+3. cors (Version: ^2.8.5):
+   - Description: cors is a middleware for enabling Cross-Origin Resource Sharing (CORS) in Express.js. It allows servers to specify who can access their resources and how.
+   - Usage: Required for handling cross-origin requests in Express applications, allowing requests from other domains or origins.
+
+4. dotenv (Version: ^16.4.1):
+   - Description: dotenv is a module for loading environment variables from a .env file into process.env. It helps keep sensitive information like API keys, passwords, and database URIs out of source code.
+   - Usage: Essential for loading environment variables in Node.js applications, making it easy to configure and manage environment-specific settings.
+
+5. express (Version: ^4.18.2):
+   - Description: express is a minimalist web application framework for Node.js. It provides a robust set of features for building web and mobile applications, including routing, middleware, and HTTP utilities.
+   - Usage: Widely used as the foundation for building web servers and APIs in Node.js applications due to its simplicity and flexibility.
+
+6. express-session (Version: ^1.17.3):
+   - Description: express-session is a middleware for managing user sessions in Express.js applications. It provides session-based authentication and session storage options.
+   - Usage: Required for implementing user authentication and session management in Express.js applications, enabling features like login sessions and user persistence.
+
+7. express-validator (Version: ^7.0.1):
+   - Description: express-validator is a set of express.js middleware for input validation and sanitization. It provides functions for validating and sanitizing user input data.
+   - Usage: Used for validating and sanitizing user input data in Express.js applications to prevent security vulnerabilities and data errors.
+
+8. jsonwebtoken (Version: ^9.0.2):
+   - Description: jsonwebtoken is a library for generating and verifying JSON Web Tokens (JWTs) in Node.js applications. It provides functions for creating and decoding JWTs, which are used for stateless authentication.
+   - Usage: Essential for implementing token-based authentication and authorization in Node.js applications, enabling secure communication between clients and servers.
+
+9. mongoose (Version: ^8.1.1):
+   - Description: mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a schema-based solution for modeling application data and interacting with MongoDB databases.
+   - Usage: Widely used for simplifying interactions with MongoDB databases in Node.js applications, including CRUD operations, schema validation, and middleware support.
+
+10. multer (Version: ^1.4.5-lts.1):
+    - Description: multer is a middleware for handling multipart/form-data, primarily used for file uploads in Express.js applications. It provides functions for processing file uploads and storing them on the server.
+    - Usage: Required for handling file uploads, such as images or documents, in Express.js applications, enabling users to upload files via HTTP requests.
+
+11. nodemailer (Version: ^6.9.9):
+    - Description: nodemailer is a module for sending emails from Node.js applications. It provides an easy-to-use interface for composing and sending email messages using SMTP or other transport methods.
+    - Usage: Used for implementing email functionality in Node.js applications, such as sending account verification emails, password reset links, or notifications.
+
+12. winston (Version: ^3.11.0):
+    - Description: winston is a versatile logging library for Node.js. It provides a simple and extensible API

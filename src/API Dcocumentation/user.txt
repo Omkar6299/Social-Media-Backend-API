@@ -1,0 +1,126 @@
+User System API Documentation:
+
+Base URL:
+
+The base URL for accessing the User System API is https://example.com/api/users.
+
+Authentication:
+
+Authentication is required for certain endpoints. It can be handled using session tokens or JWT tokens passed in the request headers.
+
+Endpoints:
+
+User Registration:
+
+Endpoint: POST /signup
+
+Description: Registers a new user.
+
+Request Body:
+name: The name of the user.
+email: The email address of the user.
+password: The password of the user.
+gender: The gender of the user (optional).
+
+Response:
+201 Created: User registered successfully.
+400 Bad Request: Failed to register user due to invalid request data.
+500 Internal Server Error: Failed to register user due to a server error.
+User Login:
+
+Endpoint: POST /signIn
+
+Description: Logs in an existing user.
+
+Request Body:
+email: The email address of the user.
+password: The password of the user.
+
+Response:
+200 OK: Login successful. Returns a JWT token for authentication.
+400 Bad Request: Invalid credentials provided.
+500 Internal Server Error: Failed to login due to a server error.
+User Logout:
+
+Endpoint: GET /logout
+
+Description: Logs out the current user.
+
+Response:
+200 OK: Logout successful.
+500 Internal Server Error: Failed to logout due to a server error.
+Logout from All Devices:
+
+Endpoint: GET /logout-all-devices
+
+Description: Logs out the user from all devices.
+
+Response:
+200 OK: Logout from all devices successful.
+500 Internal Server Error: Failed to logout due to a server error.
+
+
+Get User Details:
+
+Endpoint: GET /get-details/:userId
+
+Description: Retrieves details of a specific user.
+
+Parameters:
+userId: The ID of the user.
+
+Response:
+200 OK: Successfully retrieved user details.
+404 Not Found: User not found for the specified userId.
+500 Internal Server Error: Failed to retrieve user details due to a server error.
+
+
+Get All Users:
+
+Endpoint: GET /get-all-details
+
+Description: Retrieves details of all users.
+
+Response:
+200 OK: Successfully retrieved details of all users.
+404 Not Found: No users found.
+500 Internal Server Error: Failed to retrieve user details due to a server error.
+
+
+Update User Details:
+
+Endpoint: PUT /update-details/:userId
+
+Description: Updates details of a specific user.
+
+Parameters:
+userId: The ID of the user.
+
+Request Body:
+name: The updated name of the user.
+email: The updated email address of the user.
+gender: The updated gender of the user (optional).
+
+Response:
+200 OK: User details updated successfully.
+404 Not Found: User not found for the specified userId.
+403 Forbidden: User is not authorized to update details of other users.
+500 Internal Server Error: Failed to update user details due to a server error.
+
+
+Update User Avatar:
+
+Endpoint: PUT /update-avatar/
+
+Description: Updates the avatar of the current user.
+
+Request Body:
+avatar: The updated avatar image file.
+
+Response:
+200 OK: User avatar updated successfully.
+403 Forbidden: User is not authorized to update avatar of other users.
+500 Internal Server Error: Failed to update user avatar due to a server error.
+
+Errors:
+In case of errors during API requests, appropriate HTTP status codes and error messages are returned to the client for handling.

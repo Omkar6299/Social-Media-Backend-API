@@ -1,0 +1,44 @@
+
+Like System API Documentation:
+
+Base URL:
+ https://example.com/api/likes.
+
+Authentication:
+
+Authentication is required for certain endpoints. It can be handled using session tokens or JWT tokens passed in the request headers.
+
+Like can be on both post and comment by it's id and type.
+
+Endpoints:
+
+Toggle Like:
+Endpoint: GET /likes/toggle/:likeId?type=<type>
+Description: Toggles the like status for the specified entity (post or comment).
+Parameters:
+
+likeId: The ID of the entity (post or comment) to toggle the like.
+type: The type of entity (Post or Comment).
+Response:
+
+200 OK: Like toggled successfully.
+404 Not Found: Invalid likeId not matched with type.
+500 Internal Server Error: Failed to toggle like due to a server error.
+Get Likes:
+Endpoint: GET /likes/:likeId
+Description: Retrieves all likes for the specified entity (post or comment).
+Parameters:
+
+likeId: The ID of the entity (post or comment) for which likes are being retrieved.
+Response:
+
+200 OK: Successfully retrieved likes for the entity.
+400 Bad Request: Invalid likeId.
+200 OK (No Likes): There are currently no likes for this entity.
+500 Internal Server Error: Failed to retrieve likes due to a server error.
+Errors:
+
+In case of errors during API requests, appropriate HTTP status codes and error messages are returned to the client for handling.
+
+
+

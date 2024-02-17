@@ -1,0 +1,5 @@
+node_modules/
+.env
+error.txt
+req_url.txt
+.vscode/

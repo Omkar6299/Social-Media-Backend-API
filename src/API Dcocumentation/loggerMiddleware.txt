@@ -1,0 +1,28 @@
+Request Logger Middleware Documentation:
+
+This middleware is responsible for logging incoming requests and errors to files using the Winston logging library.
+
+Usage:
+To use this middleware, import it into application and include it as a middleware function in Express app.
+
+Description:
+The requestLoggerMiddleware logs incoming requests to a file named 'req_url.txt' and errors to a file named 'error.txt' using the Winston logging library. It formats the logs with a timestamp and can be customized to include additional information.
+
+Functions:
+1. requestLoggerMiddleware(req, res, next):
+   - Logs incoming requests and errors.
+   - Parameters:
+     - req: The request object.
+     - res: The response object.
+     - next: The next middleware function in the stack.
+   - Logs:
+     - Logs the URL and request body of incoming requests to 'req_url.txt' using the 'info' level.
+     - Logs errors with status codes >= 400, along with the URL, status code, and request body to 'error.txt' using the 'error' level.
+
+Dependencies:
+- Winston: A logging library for Node.js, used for logging requests and errors to files.
+
+Note:
+- Ensure that the Winston logging library is installed in your project before using this middleware.
+- Customize the file paths and log formats as needed to suit your application's requirements.
+

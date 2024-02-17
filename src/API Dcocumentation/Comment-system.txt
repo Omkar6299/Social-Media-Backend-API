@@ -1,0 +1,66 @@
+Comment System API Documentation:
+
+Base URL:
+
+The base URL for accessing the Comment System API is https://example.com/api/comments.
+Authentication:
+
+Authentication is required for certain endpoints. It can be handled using session tokens or JWT tokens passed in the request headers.
+Endpoints:
+
+Add Comment:
+Endpoint: POST /comments/:postId
+Description: Adds a new comment to the specified post.
+Parameters:
+
+postId: The ID of the post to which the comment is being added.
+Request Body:
+
+content: The content of the comment.
+Response:
+
+201 Created: Comment added successfully.
+404 Not Found: Post not found for the specified postId.
+500 Internal Server Error: Failed to add comment due to a server error.
+Get Comments:
+Endpoint: GET /comments/:postId
+Description: Retrieves all comments for the specified post.
+Parameters:
+
+postId: The ID of the post for which comments are being retrieved.
+Response:
+
+200 OK: Successfully retrieved comments for the post.
+404 Not Found: Post not found for the specified postId.
+200 OK (No Comments): No comments found for the post.
+500 Internal Server Error: Failed to retrieve comments due to a server error.
+Delete Comment:
+Endpoint: DELETE /comments/:commentId
+Description: Deletes the specified comment.
+Parameters:
+
+commentId: The ID of the comment to be deleted.
+Response:
+
+200 OK: Comment deleted successfully.
+404 Not Found: Comment not found for the specified commentId.
+403 Forbidden: User is not authorized to delete the comment.
+500 Internal Server Error: Failed to delete comment due to a server error.
+Update Comment:
+Endpoint: PUT /comments/:commentId
+Description: Updates the content of the specified comment.
+Parameters:
+
+commentId: The ID of the comment to be updated.
+Request Body:
+
+content: The updated content of the comment.
+Response:
+
+200 OK: Comment updated successfully.
+404 Not Found: Comment not found for the specified commentId.
+403 Forbidden: User is not authorized to update the comment.
+500 Internal Server Error: Failed to update comment due to a server error.
+Errors:
+
+In case of errors during API requests, appropriate HTTP status codes and error messages are returned to the client for handling.

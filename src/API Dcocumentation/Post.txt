@@ -1,0 +1,77 @@
+Post System API Documentation:
+
+Base URL:
+
+The base URL for accessing the Post System API is https://example.com/api/posts.
+
+Authentication:
+
+Authentication is required for certain endpoints. It can be handled using session tokens or JWT tokens passed in the request headers.
+
+Endpoints:
+
+Create Post:
+
+Endpoint: POST /posts
+Description: Creates a new post.
+Request Body:
+caption: The caption for the post.
+imageUrl: The URL of the image associated with the post.
+Response:
+201 Created: Post created successfully.
+400 Bad Request: Failed to create post due to invalid request data.
+500 Internal Server Error: Failed to create post due to a server error.
+Get Post:
+
+Endpoint: GET /posts/:postId
+Description: Retrieves the details of a specific post.
+Parameters:
+postId: The ID of the post to retrieve.
+Response:
+200 OK: Successfully retrieved the post details.
+404 Not Found: Post not found for the specified postId.
+500 Internal Server Error: Failed to retrieve post due to a server error.
+Get User Posts:
+
+Endpoint: GET /posts
+Description: Retrieves all posts created by the authenticated user.
+Response:
+200 OK: Successfully retrieved the user's posts.
+404 Not Found: No posts found for the user.
+500 Internal Server Error: Failed to retrieve posts due to a server error.
+Get All Posts:
+
+Endpoint: GET /posts/all
+Description: Retrieves all posts created by all users.
+Response:
+200 OK: Successfully retrieved all posts.
+404 Not Found: No posts found.
+500 Internal Server Error: Failed to retrieve all posts due to a server error.
+Delete Post:
+
+Endpoint: DELETE /posts/:postId
+Description: Deletes the specified post.
+Parameters:
+postId: The ID of the post to delete.
+Response:
+200 OK: Post deleted successfully.
+404 Not Found: Post not found for the specified postId.
+403 Forbidden: User is not authorized to delete the post.
+500 Internal Server Error: Failed to delete post due to a server error.
+Update Post:
+
+Endpoint: PUT /posts/:postId
+Description: Updates the details of the specified post.
+Parameters:
+postId: The ID of the post to update.
+Request Body:
+caption: The updated caption for the post.
+imageUrl: The updated URL of the image associated with the post.
+Response:
+200 OK: Post updated successfully.
+404 Not Found: Post not found for the specified postId.
+403 Forbidden: User is not authorized to update the post.
+500 Internal Server Error: Failed to update post due to a server error.
+Errors:
+
+In case of errors during API requests, appropriate HTTP status codes and error messages are returned to the client for handling.
